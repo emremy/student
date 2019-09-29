@@ -4,13 +4,18 @@
   "description": "hayirlisi",
   "main": "app.js",
   "scripts": {
-    "test": "hey there"
+    "test": "hey there",
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mysql2": "^1.7.0",
-    "pm2": "^3.5.1"
+    "nodemon": "^1.19.3",
+    "path": "^0.12.7",
+    "pm2": "^3.5.1",
+    "pug": "^2.0.4"
   }
 }
