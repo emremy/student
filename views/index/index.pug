@@ -1,4 +1,34 @@
 extends ../layouts/main-layout
 
+block css
+        link(rel='stylesheet' href="/css/classes.css")
+
 block content
-        
+        .row(style='margin-bottom: 80px')
+                .col-12.pt-4.card.my-4.shadow
+                        .card-body.pt-0.pb-4
+                                .d-flex.justify-content-between
+                                        .d-flex
+                                                h3.mb-0 Sınıflar
+                                        div
+                                                button.btn.btn-primary(type='button') Dönem Ekle
+                                                button.ml-2.btn.btn-primary(type='button') Sınıf Ekle
+                                                button.ml-2.btn.btn-danger(type='button') Sınıf Sil
+                                hr.mt-3
+                                .d-flex
+                                        h5(style="line-height: 33px") Dönem:
+                                        select(name="selectedSeson", style="max-width: 170px; margin-left: 15px").form-control
+                                                option(value="none")
+                                                option(value="2019-2020") 2019-2020
+
+                                //.classes.d-flex.flex-wrap.mt-3
+                                        .card.single-class.bg-light.col-4
+                                                .card-body.d-flex.align-items-center.justify-content-center.flex-column
+                                                        h4.card-title.text-center
+
+                                                        // a(href="/ogrenciler").mt-2.w-50.btn.btn-primary Sınıfa Bak
+                                
+                                .alert.alert-warning.mt-3
+                                        strong Henüz Burada Bir Sınıf Bulamadık
+                                        br
+                                        small Sınıfları görüntülemek için dönem seçiniz, eğer dönem seçtikten sonra 

@@ -1,0 +1,28 @@
+.single-class {
+    transition: all .4s;
+    min-height: 165px;
+  }
+  .single-class:hover {
+    background: #ececec !important;
+    cursor: pointer;
+  }
+  .single-class a {
+    opacity: 0;
+    transition: 0.4s;
+    margin-bottom: -15px;
+  }
+  .single-class:hover a {
+    opacity: 1;
+  }
+  .single-class h4 {
+    transition: 0.4s;
+    margin-top: 45px;
+  }
+  .single-class:hover h4 {
+    margin-top: -5px !important;
+  }
+  .navbar.fixed-bottom .d-flex h5 {
+    font-size: 16px;
+    line-height: 15px;
+    margin: 2px 0 0 0;
+  }
