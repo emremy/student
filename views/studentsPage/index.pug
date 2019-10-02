@@ -1,4 +1,9 @@
-extends ../layouts/main-layout
+extends ../layouts/main-layout.pug
+
+include ../mixin/switchSeasons.pug
+
+include ../mixin/editStudent.pug
+
 
 block css
         link(rel='stylesheet' href="/css/students.css")
@@ -14,7 +19,7 @@ block content
           .form-group.ogrenci-bul
             label(style="margin-bottom: 15px;") Öğrenci İsmi:
             .ogrenci-getir
-              input.form-control(type="text" placeholder="İsim giriniz..." value="Gülfidan Eylül Akkuş ")
+              input.form-control(type="text" placeholder="İsim giriniz..." value=`${student.name}`)
               button.btn.btn-primary Bul
             ul.ogrenci-listesi.list-group.d-none
               li.list-group-item(v-for="index in 8" :key="index") Gülfidan Eylül Akkuş
@@ -22,7 +27,7 @@ block content
           p(style="line-height: 30px;")
             span
               strong.mr-1 Adı Soyadı: 
-              | Gülfidan Eylül Akkuş
+              | #{student.name}
             br
             span
               strong.mr-1 Sınıfı:
@@ -31,40 +36,9 @@ block content
               strong.mr-1 Dönemi:
               |  2019 / 2020
             form.form-inline.ogrenci-ekle-form
-            
-                .w-100
-                    .input-group.mb-2.w-100
-                        .input-group-prepend
-                            .input-group-text.w-100 Adı Soyadı:
-                        input.form-control(type="text" value="Gülfidan Eylül Akkuş" placeholder="Ad ve Soyad yazınız...")
-                    .input-group.mb-2.w-100
-                        .input-group-prepend
-                            .input-group-text.w-100 TC Kimlik No:
-                        input.form-control(type="text" value="18084568741" placeholder="TC Kimlik No yazınız...")
-                    .input-group.mb-2.w-100
-                        .input-group-prepend
-                            .input-group-text.w-100 Anne İsmi:
-                        input.form-control(type="text" value="Beyhan Akkuş" placeholder="Anne ismini yazınız...")
-                    .input-group.mb-2.w-100
-                        .input-group-prepend
-                            .input-group-text.w-100 Anne Telefon:
-                        input.form-control(type="text" value="5057894512" placeholder="Anne telefonunu yazınız...")
-                    .input-group.mb-2.w-100
-                        .input-group-prepend
-                            .input-group-text.w-100 Baba İsmi:
-                        input.form-control(type="text" value="Adem Akkuş" placeholder="Baba ismini yazınız...")
-                    .input-group.mb-2.w-100
-                        .input-group-prepend
-                            .input-group-text.w-100 Baba Telefon:
-                        input.form-control(type="text" value="5057894512" placeholder="Baba telefonunu yazınız...")
-                    .input-group.mb-2.w-100
-                        .input-group-prepend
-                            .input-group-text.w-100 3. Şahıs Yakınlığı:
-                        input.form-control(type="text" value="Abisi" placeholder="3. Şahısın yakınlık derecesini yazınız...")
-                    .input-group.mb-2.w-100
-                        .input-group-prepend
-                            .input-group-text.w-100 3. Şahıs Telefon: 
-                        input.form-control(type="text" value="5057894512" placeholder="3. Şahısın telefonunu yazınız...")
+              if Object.keys(student).length > 0
+                +editStudent(student) 
+
 
           hr.my-2
           .mt-3
@@ -76,7 +50,7 @@ block content
           .d-flex.justify-content-between
             h4.mb-0
               | Aidat Bilgisi:
-              span.font-weight-normal.ml-2 Gülfidan Eylül Akkuş
+              span.font-weight-normal.ml-2 #{student.name}
           hr.mt-3
           p
             span

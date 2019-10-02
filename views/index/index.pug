@@ -1,5 +1,7 @@
 extends ../layouts/main-layout
 
+include ../mixin/switchSeasons
+
 block css
         link(rel='stylesheet' href="/css/classes.css")
 
@@ -15,12 +17,9 @@ block content
                                                 button.ml-2.btn.btn-primary(type='button') Sınıf Ekle
                                                 button.ml-2.btn.btn-danger(type='button') Sınıf Sil
                                 hr.mt-3
-                                .d-flex
-                                        h5(style="line-height: 33px") Dönem:
-                                        select(name="selectedSeson", style="max-width: 170px; margin-left: 15px").form-control
-                                                option(value="none")
-                                                option(value="2019-2020") 2019-2020
 
+                                +listSeason()
+                                
                                 //.classes.d-flex.flex-wrap.mt-3
                                         .card.single-class.bg-light.col-4
                                                 .card-body.d-flex.align-items-center.justify-content-center.flex-column

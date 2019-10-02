@@ -1,0 +1,34 @@
+mixin editStudent(student)
+    .w-100
+        .input-group.mb-2.w-100
+            .input-group-prepend
+                .input-group-text.w-100 Adı Soyadı:
+            input.form-control(type="text" value=`${student.name}` placeholder="Ad ve Soyad yazınız...")
+        .input-group.mb-2.w-100
+            .input-group-prepend
+                .input-group-text.w-100 TC Kimlik No:
+            input.form-control(type="text" value=`${student.tcno}` placeholder="TC Kimlik No yazınız...")
+        .input-group.mb-2.w-100
+            .input-group-prepend
+                .input-group-text.w-100 Anne İsmi:
+            input.form-control(type="text" value=`${student.motherName}` placeholder="Anne ismini yazınız...")
+        .input-group.mb-2.w-100
+            .input-group-prepend
+                .input-group-text.w-100 Anne Telefon:
+            input.form-control(type="text" value=`${student.motherNumber}` placeholder="Anne telefonunu yazınız...")
+        .input-group.mb-2.w-100
+            .input-group-prepend
+                .input-group-text.w-100 Baba İsmi:
+            input.form-control(type="text" value=`${student.fatherName}` placeholder="Baba ismini yazınız...")
+        .input-group.mb-2.w-100
+            .input-group-prepend
+                .input-group-text.w-100 Baba Telefon:
+            input.form-control(type="text" value=`${student.fatherNumber}` placeholder="Baba telefonunu yazınız...")
+        .input-group.mb-2.w-100
+            .input-group-prepend
+                .input-group-text.w-100 3. Şahıs Yakınlığı:
+            input.form-control(type="text" value=`${student.relative}` placeholder="3. Şahısın yakınlık derecesini yazınız...")
+        .input-group.mb-2.w-100
+            .input-group-prepend
+                .input-group-text.w-100 3. Şahıs Telefon: 
+            input.form-control(type="text" value=`${student.relativeNumber}` placeholder="3. Şahısın telefonunu yazınız...")

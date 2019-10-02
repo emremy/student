@@ -1,3 +1,5 @@
+include ../mixin/switchSeasons
+
 nav.navbar.fixed-bottom.navbar-light(style="background-color: #e3f2fd;")
     .container
         span.navbar-text.mr-auto
@@ -8,8 +10,4 @@ nav.navbar.fixed-bottom.navbar-light(style="background-color: #e3f2fd;")
         span.navbar-textnavbar-nav.my-2.my-lg-0.mr-3
             strong Eylül Ayı Aidat Verenler : 
             span.badge.badge-success 400
-        .d-flex
-            h5(style="line-height: 33px") Dönem:
-            select(name="selectedSeson", style="max-width: 170px; margin-left: 15px").form-control
-                option(value="none")
-                option(value="2019-2020") 2019-2020
+        +listSeason()
