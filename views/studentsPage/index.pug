@@ -1,0 +1,105 @@
+extends ../layouts/main-layout
+
+block css
+        link(rel='stylesheet' href="/css/students.css")
+
+block content
+
+    .row(style="margin-bottom: 80px;")
+      .col-6.pt-4.card.mt-4.shadow
+        .card-body.pt-0
+          .d-flex.justify-content-between
+            h4.mb-0 Öğrenci Bilgileri
+          hr.mt-3
+          .form-group.ogrenci-bul
+            label(style="margin-bottom: 15px;") Öğrenci İsmi:
+            .ogrenci-getir
+              input.form-control(type="text" placeholder="İsim giriniz..." value="Gülfidan Eylül Akkuş ")
+              button.btn.btn-primary Bul
+            ul.ogrenci-listesi.list-group.d-none
+              li.list-group-item(v-for="index in 8" :key="index") Gülfidan Eylül Akkuş
+          hr
+          p(style="line-height: 30px;")
+            span
+              strong.mr-1 Adı Soyadı: 
+              | Gülfidan Eylül Akkuş
+            br
+            span
+              strong.mr-1 Sınıfı:
+              |  3/A
+            span.ml-3
+              strong.mr-1 Dönemi:
+              |  2019 / 2020
+            form.form-inline.ogrenci-ekle-form
+            
+                .w-100
+                    .input-group.mb-2.w-100
+                        .input-group-prepend
+                            .input-group-text.w-100 Adı Soyadı:
+                        input.form-control(type="text" value="Gülfidan Eylül Akkuş" placeholder="Ad ve Soyad yazınız...")
+                    .input-group.mb-2.w-100
+                        .input-group-prepend
+                            .input-group-text.w-100 TC Kimlik No:
+                        input.form-control(type="text" value="18084568741" placeholder="TC Kimlik No yazınız...")
+                    .input-group.mb-2.w-100
+                        .input-group-prepend
+                            .input-group-text.w-100 Anne İsmi:
+                        input.form-control(type="text" value="Beyhan Akkuş" placeholder="Anne ismini yazınız...")
+                    .input-group.mb-2.w-100
+                        .input-group-prepend
+                            .input-group-text.w-100 Anne Telefon:
+                        input.form-control(type="text" value="5057894512" placeholder="Anne telefonunu yazınız...")
+                    .input-group.mb-2.w-100
+                        .input-group-prepend
+                            .input-group-text.w-100 Baba İsmi:
+                        input.form-control(type="text" value="Adem Akkuş" placeholder="Baba ismini yazınız...")
+                    .input-group.mb-2.w-100
+                        .input-group-prepend
+                            .input-group-text.w-100 Baba Telefon:
+                        input.form-control(type="text" value="5057894512" placeholder="Baba telefonunu yazınız...")
+                    .input-group.mb-2.w-100
+                        .input-group-prepend
+                            .input-group-text.w-100 3. Şahıs Yakınlığı:
+                        input.form-control(type="text" value="Abisi" placeholder="3. Şahısın yakınlık derecesini yazınız...")
+                    .input-group.mb-2.w-100
+                        .input-group-prepend
+                            .input-group-text.w-100 3. Şahıs Telefon: 
+                        input.form-control(type="text" value="5057894512" placeholder="3. Şahısın telefonunu yazınız...")
+
+          hr.my-2
+          .mt-3
+            button.btn.btn-danger(@click="deleteStudent('Öğrenci İsmi')") Öğrenciyi Sil
+            button.btn.btn-info.float-right Aidat Göster
+            button.btn.btn-primary.float-right.mr-2 Bilgileri Kaydet
+      .col-5.offset-1.pt-4.card.mt-4.shadow
+        .card-body.pt-0
+          .d-flex.justify-content-between
+            h4.mb-0
+              | Aidat Bilgisi:
+              span.font-weight-normal.ml-2 Gülfidan Eylül Akkuş
+          hr.mt-3
+          p
+            span
+              strong 2019 / 2020
+            span.ml-2 dönemi aidat bilgileri aşağıdaki gibidir.
+          table.table.table-hover.table-striped.table-bordered
+            thead
+              tr
+                th Ay
+                th Ücret
+                th Tarih
+            tbody
+              tr.single-aidat(@click="checkDues(item)" v-for="item in 10" :key="item")
+                td.align-middle
+                  strong Eylül
+                  span.badge.badge-info.ml-2.edit-aidat
+                    i.fa.fa-edit
+                td.align-middle 200 TL
+                td.align-middle 18 Eylül 2019
+                
+          .d-none.alert.alert-warning
+            strong Henüz Burada Bir Öğrenci Bulamadık
+            br
+            small
+              | Öğrenci Eklemek için sağ üstteki Öğrenci Ekle butonunu kullanabilirsiniz
+
