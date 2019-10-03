@@ -13,26 +13,12 @@ block content
                                         .d-flex
                                                 h3.mb-0 Sınıflar
                                         div
-                                                button.btn.btn-primary(type='button') Dönem Ekle
+                                                button.btn.btn-primary.addSeasonPanelOpen(type='button') Dönem Ekle
                                                 button.ml-2.btn.btn-primary.AddClasses(type='button') Sınıf Ekle
                                                 button.ml-2.btn.btn-danger(type='button') Sınıf Sil
                                 hr.mt-3
-                                #AddClassesPanel.modal(style="display:none;")
-                                        .modal-dialog
-                                                .modal-content
-                                                        .modal-header.text-center
-                                                                h5.modal-title.w-100(style='margin-right: -35px;') Sınıf Ekle
-                                                                button.close(type='button', data-dismiss='modal', aria-label='Close')
-                                                                        span(aria-hidden='true') ×
-                                                        .modal-body.text-center
-                                                                p
-                                                                        strong.mr-1 Dönem: |  2019 / 2020
-                                                                form.form-inline.justify-content-center(method='POST', action='')
-                                                                        .form-group.mb-2
-                                                                                label Bir Sınıf İsmi Yazınız:
-                                                                        .form-group.mx-sm-3.mb-2
-                                                                                input#inputPassword2.form-control(type='text', placeholder='Sınıf İsmi')
-                                                                        button.btn.btn-primary.mb-2(type='submit') Ekle
+                                include addClass.pug
+                                include addSeason.pug
                                 +listSeason()
                                 
                                 //.classes.d-flex.flex-wrap.mt-3
@@ -50,3 +36,4 @@ block content
 
 block script
         script(src="/js/addClasses.js")
+        script(src="/js/addSeason.js")
