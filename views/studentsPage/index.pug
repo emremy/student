@@ -42,7 +42,7 @@ block content
 
           hr.my-2
           .mt-3
-            button.btn.btn-danger(@click="deleteStudent('Öğrenci İsmi')") Öğrenciyi Sil
+            button.btn.btn-danger Öğrenciyi Sil
             button.btn.btn-info.float-right Aidat Göster
             button.btn.btn-primary.float-right.mr-2 Bilgileri Kaydet
       .col-5.offset-1.pt-4.card.mt-4.shadow
@@ -63,7 +63,7 @@ block content
                 th Ücret
                 th Tarih
             tbody
-              tr.single-aidat(@click="checkDues(item)" v-for="item in 10" :key="item")
+              tr.single-aidat
                 td.align-middle
                   strong Eylül
                   span.badge.badge-info.ml-2.edit-aidat

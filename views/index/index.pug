@@ -14,7 +14,7 @@ block content
                                                 h3.mb-0 Sınıflar
                                         div
                                                 button.btn.btn-primary(type='button') Dönem Ekle
-                                                button.ml-2.btn.btn-primary(type='button') Sınıf Ekle
+                                                button.ml-2.btn.btn-primary(type='button')#AddClasses Sınıf Ekle
                                                 button.ml-2.btn.btn-danger(type='button') Sınıf Sil
                                 hr.mt-3
 
@@ -31,3 +31,7 @@ block content
                                         strong Henüz Burada Bir Sınıf Bulamadık
                                         br
                                         small Sınıfları görüntülemek için dönem seçiniz, eğer dönem seçtikten sonra 
+
+
+block script
+        script(src="/js/addClasses.js")
