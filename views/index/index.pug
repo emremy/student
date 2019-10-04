@@ -15,10 +15,11 @@ block content
                                         div
                                                 button.btn.btn-primary.addSeasonPanelOpen(type='button') Dönem Ekle
                                                 button.ml-2.btn.btn-primary.AddClasses(type='button') Sınıf Ekle
-                                                button.ml-2.btn.btn-danger(type='button') Sınıf Sil
+                                                button.ml-2.btn.btn-danger.DeleteClassPanelOpen(type='button') Sınıf Sil
                                 hr.mt-3
-                                include addClass.pug
-                                include addSeason.pug
+                                include buttonProperty/addClass.pug
+                                include buttonProperty/addSeason.pug
+                                include buttonProperty/deleteClass.pug
                                 +listSeason()
                                 
                                 //.classes.d-flex.flex-wrap.mt-3
@@ -37,3 +38,4 @@ block content
 block script
         script(src="/js/addClasses.js")
         script(src="/js/addSeason.js")
+        script(src="/js/deleteClass.js")

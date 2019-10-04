@@ -1,0 +1,22 @@
+.modal.DeleteClassPanel(style="display:none;")
+    .modal-dialog
+        .modal-content
+            .modal-header.text-center
+                h5.modal-title.w-100(style="margin-right: 35px;") Sınıf Sil
+                button.closeDeleteClassPanel(type='button', data-dismiss='modal', aria-label='closeDeleteClassPanel')
+                    span(aria-hidden='true') x
+            .modal-body.text-center
+                form.form-inline.justify-content-center(action="" method="POST")
+                    .form-group.mb-2
+                        label Sınıf Seçiniz:
+                    select.form-control.mx-3.mb-2(style="max-width: 170px;margin-left: 15px;")
+                        option 3 / A
+                        option 4 / B 
+                        option 4 / C 
+                        option 4 / D 
+                        option 5 / A 
+                        option 5 / B 
+                        option 5 / C 
+                        option 5 / D
+                    button.btn.btn-danger.mb-2(type="submit") Sil
+                     
