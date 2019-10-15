@@ -5,6 +5,6 @@ const studentsController = require('../controller/studentsController');
 
 
 router.get('/aidatlar',studentsController.index);
-
+router.get('/ogrenciler',studentsController.students);
 
 module.exports = router;

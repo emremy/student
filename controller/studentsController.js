@@ -16,3 +16,10 @@ exports.index = (req,res,next)=>{
         student:student
     });
 }
+exports.students = (req,res,next)=>{
+    res.render('studentsPage/classToStudents',{
+        title:"Şu sınıfa ait öğrenciler",
+        path:"/ogrenciler",
+        students: student
+    })
+}
