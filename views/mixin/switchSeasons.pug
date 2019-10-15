@@ -4,3 +4,9 @@ mixin listSeason()
             select(name="selectedSeson", style="max-width: 170px; margin-left: 15px").form-control
                     option(value="none")
                     option(value="2019-2020") 2019-2020
+mixin bigListSeason()
+    .myBigFlex.d-flex
+            h5(style="line-height: 33px") Dönem:
+            select(name="selectedSeson", style="max-width: 170px; margin-left: 15px").form-control#switchSeasons
+                    option(value="none")
+                    option(value="2019-2020") 2019-2020

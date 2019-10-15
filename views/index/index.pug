@@ -20,14 +20,14 @@ block content
                                 include buttonProperty/addClass.pug
                                 include buttonProperty/addSeason.pug
                                 include buttonProperty/deleteClass.pug
-                                +listSeason()
+                                +bigListSeason()
                                 
-                                //.classes.d-flex.flex-wrap.mt-3
+                                .classes.flex-wrap.mt-3(style="display:none;")
                                         .card.single-class.bg-light.col-4
                                                 .card-body.d-flex.align-items-center.justify-content-center.flex-column
-                                                        h4.card-title.text-center
+                                                        h4.card-title.text-center 5/A
 
-                                                        // a(href="/ogrenciler").mt-2.w-50.btn.btn-primary Sınıfa Bak
+                                                        a(href="/ogrenciler").mt-2.w-50.btn.btn-primary Sınıfa Bak
                                 
                                 .alert.alert-warning.mt-3
                                         strong Henüz Burada Bir Sınıf Bulamadık
@@ -36,6 +36,7 @@ block content
 
 
 block script
-        script(src="/js/addClasses.js")
-        script(src="/js/addSeason.js")
-        script(src="/js/deleteClass.js")
+        script(src="/js/buttonRequest/addClasses.js")
+        script(src="/js/buttonRequest/addSeason.js")
+        script(src="/js/buttonRequest/deleteClass.js")
+        script(src="/js/selectRequest/switchSeasons.js")
