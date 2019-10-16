@@ -1,5 +1,7 @@
 extends ../layouts/main-layout.pug
 
+include ../mixin/listAllStudent.pug
+
 block css
         link(rel='stylesheet' href="/css/allStudents.css")
 block content
@@ -11,7 +13,7 @@ block content
                         .d-flex
                             router-link.btn.btn-light.mr-3.px-2(style='line-height: 0px;')
                                     i.fa.fa-angle-left
-                            h3.mb-0.class-name 3/A Sınıfının Öğrencileri (5)
+                            h3.mb-0.class-name 3/A Sınıfının Öğrencileri (#{students.length})
 
                         button.btn.btn-primary(type='button') Öğrenci Ekle
                     hr.mt-3
@@ -27,25 +29,12 @@ block content
                                     th 3.Kişi Tel
                                     th.text-center Aidatlar
                         tbody
-                            tr
-                                    td.align-middle
-                                    td.align-middle Gülfidan Eylül Akkuş
-                                    td.align-middle 18084568741
-                                    td.align-middle
-                                        | Beyhan Yılmaz
-                                        span.ml-2.badge.badge-dark (505)-789-4512
-                                    td.align-middle
-                                        | Adem Akkuş
-                                        span.ml-2.badge.badge-dark (505)-789-4512
-                                    td.align-middle
-                                        | (505)-789-4512
-                                        span.ml-2.badge.badge-dark Abisi
-                                    td.align-middle.text-center
-                                        .btn.btn-info.button-due-detail(type='button')
-                                            a(href="/aidatlar" style="text-decoration: none; color: #fff;")
-                                                i.fa.fa-edit
+                            +listAllStudent(students)
                     .d-none.alert.alert-warning
                         strong Henüz Burada Bir Öğrenci Bulamadık
                         br
                         small
                         | Öğrenci Eklemek için sağ üstteki Öğrenci Ekle butonunu kullanabilirsiniz
+
+
+

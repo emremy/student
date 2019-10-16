@@ -2,6 +2,8 @@ extends ../layouts/main-layout
 
 include ../mixin/switchSeasons
 
+include ../mixin/listClasses
+
 block css
         link(rel='stylesheet' href="/css/classes.css")
 
@@ -22,12 +24,7 @@ block content
                                 include buttonProperty/deleteClass.pug
                                 +bigListSeason()
                                 
-                                .classes.flex-wrap.mt-3(style="display:none;")
-                                        .card.single-class.bg-light.col-4
-                                                .card-body.d-flex.align-items-center.justify-content-center.flex-column
-                                                        h4.card-title.text-center 5/A
-
-                                                        a(href="/ogrenciler").mt-2.w-50.btn.btn-primary Sınıfa Bak
+                                +listClasses(classes)
                                 
                                 .alert.alert-warning.mt-3
                                         strong Henüz Burada Bir Sınıf Bulamadık

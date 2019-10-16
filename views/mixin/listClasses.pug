@@ -1,0 +1,9 @@
+mixin listClasses(classes)
+    .classes.flex-wrap.mt-3(style="display:none;")
+        each classe in classes
+            .card.single-class.bg-light.col-4.mr-3
+                    .card-body.d-flex.align-items-center.justify-content-center.flex-column
+                            h4.card-title.text-center 
+                                = classe.name
+
+                            a(href="/ogrenciler").mt-2.w-50.btn.btn-primary Sınıfa Bak

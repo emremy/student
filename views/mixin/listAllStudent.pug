@@ -1,0 +1,22 @@
+mixin listAllStudent(students)
+    
+        each student in students
+                tr
+                    td.align-middle
+                    td.align-middle= student.name
+                    td.align-middle= student.tcno
+                    td.align-middle= student.motherName
+                        span.ml-2.badge.badge-dark= student.motherNumber
+                    td.align-middle= student.fatherName
+                        span.ml-2.badge.badge-dark= student.fatherNumber
+                    td.align-middle= student.relativeNumber
+                        span.ml-2.badge.badge-dark= student.relative
+                    td.align-middle.text-center
+                        .btn.btn-info.button-due-detail(type='button')
+                            a(href="/aidatlar" style="text-decoration: none; color: #fff;")
+                                i.fa.fa-edit
+        else
+            .d-none.alert.alert-warning
+                strong Henüz Burada Bir Öğrenci Bulamadık
+                br
+                small Öğrenci Eklemek için sağ üstteki Öğrenci Ekle butonunu kullanabilirsiniz 
