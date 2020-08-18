@@ -1,3 +1,2 @@
 # STUDENT
 
-<h1>HADİ BAKALIIMMM<h1>
